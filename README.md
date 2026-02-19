@@ -2,7 +2,9 @@
 
 ## LINKS:
 
-- https://nuxt.com/docs/4.x/directory-structure --> nuxt 4 structure
+- [nuxt 4 structure](https://nuxt.com/docs/4.x/directory-structure)
+
+- [nuxt 4 exemples](http://nuxt.com/docs/4.x/examples)
 
 ---
 
@@ -13,6 +15,16 @@
 `rm -rf node_modules .nuxt .output .nitro .data .cache dist logs`
 `npm i`
 `npm run dev`
+
+---
+
+## ICONIFY:
+
+`import { Icon } from "@iconify/vue";`
+
+`<Icon icon="mdi-light:home" />`
+
+## [icons list](https://icon-sets.iconify.design/)
 
 ---
 
