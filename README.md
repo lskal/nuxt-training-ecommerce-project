@@ -1,5 +1,51 @@
 # not-oakley
 
-LINKS:
+## LINKS:
 
 - https://nuxt.com/docs/4.x/directory-structure --> nuxt 4 structure
+
+---
+
+## USEFULL CLI LINES:
+
+## deleta and full install
+
+`rm -rf node_modules .nuxt .output .nitro .data .cache dist logs`
+`npm i`
+`npm run dev`
+
+---
+
+## Nuxt Minimal Starter
+
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+---
+
+## SETUP NPM:
+
+Make sure to install dependencies:
+
+### npm install
+
+`npm install`
+
+### Development Server
+
+Start the development server on `http://localhost:3000`:
+
+### Production
+
+Build the application for production:
+
+### npm run build
+
+`npm run build`
+
+Locally preview production build:
+
+### npm run preview
+
+`npm run preview`
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
