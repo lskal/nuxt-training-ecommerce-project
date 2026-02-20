@@ -1,4 +1,6 @@
-# not-oakley
+# NOT-OAKLEY
+
+## This is a training project to inprove in Nuxt 4 (current) and Vue 3 (current). Is not ment to be a rep off of the Oakley website, is just using is as a base to learn, please don't sue me ✌️
 
 ## LINKS:
 
@@ -27,6 +29,24 @@
 `<Icon icon="mdi-light:home" />`
 
 find the perfect icon by checking out the [iconify catalog page](https://icon-sets.iconify.design/)
+
+---
+
+## SCSS
+
+[documentation scss](https://nuxt.com/docs/4.x/getting-started/styling#using-preprocessors)
+
+---
+
+## POSSIBLE FUTURE INSTALL PACKEGES:
+
+- i18n
+- sitemap
+- supabase
+- pinia
+- tailwind
+- content
+- enlint / eslint-module
 
 ---
 
