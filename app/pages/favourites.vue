@@ -1,11 +1,13 @@
 <template>
-  <div class="footerContainer">FOOTER</div>
+  <div class="container">
+    <h1>Favourites</h1>
+    <p>Your saved items will live here.</p>
+  </div>
 </template>
 
 <style scoped lang="scss">
-.footerContainer {
+.container {
   padding-left: var(--page-gutter);
   padding-right: var(--page-gutter);
-  margin-top: 50px;
 }
 </style>

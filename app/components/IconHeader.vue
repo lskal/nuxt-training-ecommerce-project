@@ -1,30 +1,65 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { Icon } from "@iconify/vue";
+import { useIsActivePath } from "~/composables/useIsActivePath";
 
 const props = defineProps<{
   icon: string;
   iconHover: string;
+  iconActive: string;
+  link?: string;
+  preventClick?: boolean;
   heightIcon?: number;
   active?: boolean; //probably not gonna be use becouse i can read the url path and find if active
   label?: string;
 }>();
 
+// actove path logic
+const { isActivePath } = useIsActivePath();
+
+const isRouteActive = computed(() => {
+  if (!props.link) return false;
+  return isActivePath(props.link);
+});
+
+// hover logic
 const isHover = ref(false);
 
-const currentIcon = computed(() =>
-  //probably props.active not gonna be used beacuse i can read the url path
-  props.active || isHover.value ? props.iconHover : props.icon,
-);
+// icon value
+const currentIcon = computed(() => {
+  if (!isHover.value && !isRouteActive.value) return props.icon;
+  if (isHover.value) return props.iconHover;
+  if (isRouteActive.value) return props.iconActive;
+});
 
-// TODO: implement active state and the pages in the header
+// page not exist yet
+const preventClickAlert = (e: MouseEvent) => {
+  if (props.preventClick) {
+    alert("This page/link/element does not exist yet.");
+  }
+};
 </script>
 
 <template>
-  <button
+  <NuxtLink
+    v-if="link && !preventClick"
+    :to="link"
     class="iconBtn"
-    type="button"
     :aria-label="label"
+    @mouseenter="isHover = true"
+    @mouseleave="isHover = false"
+    @focus="isHover = true"
+    @blur="isHover = false"
+  >
+    <Icon :icon="currentIcon" :height="heightIcon || 30" />
+  </NuxtLink>
+
+  <button
+    v-else
+    type="button"
+    class="iconBtn"
+    :aria-label="label"
+    @click="preventClickAlert"
     @mouseenter="isHover = true"
     @mouseleave="isHover = false"
     @focus="isHover = true"
@@ -41,7 +76,9 @@ const currentIcon = computed(() =>
   justify-content: center;
   padding: 0;
   border: 0;
-  background: transparent;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
 }
 </style>

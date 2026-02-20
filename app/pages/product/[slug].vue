@@ -1,7 +1,11 @@
+<script setup lang="ts">
+const route = useRoute();
+const slug = computed(() => String(route.params.slug));
+</script>
+
 <template>
   <div class="container">
-    <h1>Welcome to the homepage</h1>
-    <AppAlert> This is an auto-imported component </AppAlert>
+    <h1>Product: {{ slug }}</h1>
   </div>
 </template>
 

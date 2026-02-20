@@ -1,7 +1,11 @@
+<script setup lang="ts">
+const route = useRoute();
+const category = computed(() => String(route.params.category));
+</script>
+
 <template>
   <div class="container">
-    <h1>Welcome to the homepage</h1>
-    <AppAlert> This is an auto-imported component </AppAlert>
+    <h1>Category: {{ category }}</h1>
   </div>
 </template>
 
